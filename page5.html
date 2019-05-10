@@ -1,1 +1,34 @@
+<html>
+  
+  <head>
+    <style>
+      .buttons {
+        font-size: 50px;
+        font-family: "malgun gothic";
+        border: solid black 1px;
+        position: absolute;
+        text-align: center;
+      }
+    </style>
+    <body>
+      <div id='dust'></div>
+      <div id='temp'></div>
+      <div id='humidity'></div>
+      <div id='sky'></div>
+      <div id='rain'></div>
+      <div id='wind1'></div>
+      <div id='wind2'></div>
+    </body>
+  </head>
+<script>
+	const onDataLoaded = (data) => {
+		// 풍향
+		const dataK3 = data.feed.entry.find((entry) => entry.title.$t == 'K3').content.$t
+		document.getElementById('wind1').innerHTML = "현재 풍향: " + dataK3
+		// 풍속
+		const dataL3 = data.feed.entry.find((entry) => entry.title.$t == 'L3').content.$t
+		document.getElementById('wind2').innerHTML = "현재 풍속: " + dataL3
+</script>
+<script src="https://spreadsheets.google.com/feeds/cells/1fImbr5ovXR07P7NxYKqU6FsYKsHHaonZV9PmDnjt_T8/2/public/basic?alt=json-in-script&callback=onDataLoaded"></script>
 
+</html>
