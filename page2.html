@@ -1,1 +1,32 @@
+<html>
+  
+  <head>
+    <style>
+      .buttons {
+        font-size: 50px;
+        font-family: "malgun gothic";
+        border: solid black 1px;
+        position: absolute;
+        text-align: center;
+      }
+    </style>
+    <body>
+      <div id='dust'></div>
+      <div id='temp'></div>
+      <div id='humidity'></div>
+      <div id='sky'></div>
+      <div id='rain'></div>
+      <div id='wind1'></div>
+      <div id='wind2'></div>
+    </body>
+  </head>
+<script>
+	  document.getElementById('dust').innerHTML = "현재 미세먼지: " + dataE3
+		// 온도
+		const dataG3 = data.feed.entry.find((entry) => entry.title.$t == 'G3').content.$t
+		document.getElementById('temp').innerHTML = "현재 온도: " + dataG3
+		// 습도
+</script>
+<script src="https://spreadsheets.google.com/feeds/cells/1fImbr5ovXR07P7NxYKqU6FsYKsHHaonZV9PmDnjt_T8/2/public/basic?alt=json-in-script&callback=onDataLoaded"></script>
 
+</html>
